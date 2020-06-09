@@ -32,7 +32,8 @@ In order to find your monthly payment amount "M,” you need to plug in the foll
 `I` = Interest rate on the mortgage
 `N` = Number of periods (monthly mortgage payments)*/
 
-let monthlyRate = principal [ interestRate ( 1 + interestRate )^periods ] / [ ( 1 + interestRate )^periods - 1 ];
+// let monthlyRate = principal * [ monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate ), periods) ] / [ Math.pow(( 1 + monthlyInterestRate ), periods) - 1 ];
+// console.log(monthlyRate);
 
 
 /*Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
@@ -47,7 +48,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-
+let n1 = Math.pow(( 1 + monthlyInterestRate), periods );
+let numerator = n1 * monthlyInterestRate;
+let denominator = n1 - 1;
+let monthlyRate = principal * (numerator / denominator);
 
 
 
@@ -57,10 +61,11 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator(){
-    return monthlyInterestRate;
+function mortgageCalculator(principal, monthlyInterestRate, periods){   
+console.log(name, " your monthly interest rate is $ ", monthlyRate);
+return;
 }
-console.log(name, " your monthly interest rate is $ ", mortgageCalculator);
+console.log(monthlyInterestRate);
 
 
 
