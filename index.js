@@ -3,7 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
+let principal = 200000;
+let interestRate = 0.05;
+let years = 30;
+let name = 'Andy';
 
 
 
@@ -14,7 +17,8 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-
+let monthlyInterestRate = interestRate / 12;
+let periods = years * 12;
 
 
 
@@ -22,8 +26,16 @@
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
 
 M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
+In order to find your monthly payment amount "M,” you need to plug in the following three numbers from your loan:
 
-Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
+`P` = Principal amount (the total amount borrowed)
+`I` = Interest rate on the mortgage
+`N` = Number of periods (monthly mortgage payments)*/
+
+let monthlyRate = principal [ interestRate ( 1 + interestRate )^periods ] / [ ( 1 + interestRate )^periods - 1 ];
+
+
+/*Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
 
 (1) Create a variable called n1 and set it equal to  (1 + I )^N
 (2) Create a variable called n2 and set it equal to n1 * I
@@ -45,7 +57,10 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator(){
+    return monthlyInterestRate;
+}
+console.log(name, " your monthly interest rate is $ ", mortgageCalculator);
 
 
 
@@ -55,7 +70,9 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-
+// function mortgageCalculator(P, I, N){
+//     return
+// }
 
 
 
