@@ -61,11 +61,12 @@ let monthlyRate = principal * (numerator / denominator);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator(principal, monthlyInterestRate, periods){   
-console.log(name, " your monthly interest rate is $ ", monthlyRate);
-return;
+function mortgageCalculator(principal, monthlyInterestRate, periods){     
+    let monthlyRate = principal * [ monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate ), periods) ] / [ Math.pow(( 1 + monthlyInterestRate ), periods) - 1 ];
+    return monthlyRate;
+
 }
-console.log(monthlyInterestRate);
+console.log(name, ', your monthly rate is $', (mortgageCalculator(principal, monthlyInterestRate, periods)));
 
 
 
@@ -75,11 +76,12 @@ console.log(monthlyInterestRate);
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-// function mortgageCalculator(P, I, N){
-//     return
-// }
 
-
+function mortgageCalculator(P, I, N){ 
+    let monthlyRate = P * [I * Math.pow((1 + I), N)] / [Math.pow((1 + I), N) -1];
+    return monthlyRate;
+    }
+    console.log(mortgageCalculator(200000, (0.05 / 12), (30 * 12)));
 
 
 // 🏡 Task 5: Conditionals
